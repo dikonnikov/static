@@ -15,11 +15,7 @@ pipeline {
         }
         stage('Check Website') {
               steps {
-                    if curl -I "http://udacity-devops.s3-website-us-west-2.amazonaws.com/" 2>&1 | grep -w "200\|301" ; then
-                        echo "udacity-devops is up"
-                    else
-                        echo "udacity-devops is down"
-                    fi
+                    sh 'curl -I "http://udacity-devops.s3-website-us-west-2.amazonaws.com/" 2>&1 | grep -w "200\|301"'
               }
         } 
 
