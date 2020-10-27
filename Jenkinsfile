@@ -15,7 +15,7 @@ pipeline {
         }
         stage('Check Website') {
               steps {
-                    sh 'curl -I "http://udacity-devops.s3-website-us-west-2.amazonaws.com/" 2>&1 | grep -w "200|301"'
+                    sh 'curl -I "http://udacity-devops.s3-website-us-west-2.amazonaws.com/" 2>&1 | grep -w "200\|301"'
               }
         } 
 
